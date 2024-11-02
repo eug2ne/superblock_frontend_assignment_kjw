@@ -1,0 +1,31 @@
+table {
+  width: fit-content;
+  height: fit-content;
+  margin: 60px auto;
+  justify-self: center;
+  align-self: center;
+  border-spacing: 5px;
+}
+
+td {
+  width: 100px;
+  height: 100px;
+  text-align: center;
+  font-size: 30px;
+  line-height: 50px;
+  background-color: #e2e2e2;
+}
+
+.balloon {
+  width: 70px;
+  height: 70px;
+}
+
+.balloon-pop {
+  transform: scale(2);
+  transition-duration: 0.5s;
+}
+
+.invisible {
+  display: none;
+}

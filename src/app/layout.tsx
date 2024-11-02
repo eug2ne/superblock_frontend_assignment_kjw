@@ -29,6 +29,21 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
+        <footer>
+          Balloon by Vectors Point from <a href="https://thenounproject.com/browse/icons/term/balloon/" target="_blank" title="Balloon Icons">Noun Project</a> (CC BY 3.0)
+        </footer>
+        <footer>
+          Emoji smile by Imran shaikh from <a href="https://thenounproject.com/browse/icons/term/emoji-smile/" target="_blank" title="Emoji smile Icons">Noun Project</a> (CC BY 3.0)
+        </footer>
+        <footer>
+          upset by Alice Design from <a href="https://thenounproject.com/browse/icons/term/upset/" target="_blank" title="upset Icons">Noun Project</a> (CC BY 3.0)
+        </footer>
+        <footer>
+          pop by Lars Meiertoberens from <a href="https://thenounproject.com/browse/icons/term/pop/" target="_blank" title="pop Icons">Noun Project</a> (CC BY 3.0)
+        </footer>
+        <footer>
+          Refresh by Roselin Christina.S from <a href="https://thenounproject.com/browse/icons/term/refresh/" target="_blank" title="Refresh Icons">Noun Project</a> (CC BY 3.0)
+        </footer>
       </body>
     </html>
   );
