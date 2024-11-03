@@ -44,11 +44,10 @@ export const generateBalloons = (m: number, balloons_n: number): Array<balloonIn
 
 export const popBalloon = (balloon: balloonInterface, balloons: Array<balloonInterface>): Array<balloonInterface>|boolean => {
   // check pass
-  let unpop_balloons: Array<balloonInterface> = balloons.filter((b: balloonInterface) => !b.pop)
+  const unpop_balloons: Array<balloonInterface> = balloons.filter((b: balloonInterface) => !b.pop)
   const largest_adjacent: number = unpop_balloons.toSorted((a: balloonInterface, b: balloonInterface) => {
     return b.adjacent.length - a.adjacent.length
   })[0].adjacent.length
-  console.log(largest_adjacent)
   if (balloon.adjacent.length != largest_adjacent) {
     // game over
     return false
@@ -58,12 +57,6 @@ export const popBalloon = (balloon: balloonInterface, balloons: Array<balloonInt
   for (const i of balloon.adjacent) {
     balloons[i].pop = true
     balloons[i].pop_order = balloon.adjacent.indexOf(i)
-  }
-
-  unpop_balloons = balloons.filter((b: balloonInterface) => !b.pop)
-  if (unpop_balloons.length === 0) {
-    // game clear
-    return true
   }
 
   // recalculate adjacent
@@ -82,4 +75,16 @@ export const popBalloon = (balloon: balloonInterface, balloons: Array<balloonInt
   }
 
   return balloons
+}
+
+export const timeToString = (time: number): string => {
+  // convert number to time_string
+  const millisec_digit2: number = time % 10
+  const millisec_digit1: number = (time % 100 - millisec_digit2) / 10
+  const sec_digit: number = Math.floor(time / 100)
+  const tensec_digit: number = Math.floor(time / 1000)
+
+  const time_string: string = `${tensec_digit}${sec_digit}:${millisec_digit1}${millisec_digit2}`
+
+  return time_string
 }

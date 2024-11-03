@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react"
+import { timeToString } from "../composibles/game"
 
-export default function Banner(props: { game_over: boolean, game_clear: boolean }) {
+export default function Banner(props: { game_over: boolean, game_clear: boolean, record: number }) {
   const overAudioRef = useRef(null)
   const clearAudioRef = useRef(null)
   const smile_image: React.JSX.Element = (<img src="/smile.svg"/>)
@@ -34,10 +35,10 @@ export default function Banner(props: { game_over: boolean, game_clear: boolean 
             {props.game_over && upset_image}
             {props.game_clear && smile_image}
           </div>
-          <h1 className="m-2 text-2xl text-center font-bold">
+          <h2 className="m-2 text-2xl text-center font-bold">
             {props.game_over && "Game Over"}
-            {props.game_clear && "Game Clear"}
-          </h1>
+            {props.game_clear && "Game Clear. Your record is: " + timeToString(props.record)}
+          </h2>
           <button className="m-2 p-2 w-20 h-30 text-lg text-center underline font-bold rounded-md bg-slate-400">
             Retry?
             <img src="/refresh.svg" alt="restart button" onClick={clickRestart} />
